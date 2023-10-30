@@ -30,25 +30,18 @@ let lima = {
   avgCookie: 4.6,
 };
 
-let time = 6;
-let totalCookie;
+// let time = 6;
+let hourCookie;
 // ChatGPT helped me with this function, it said I should generate a random number of customers first before I find the total
 function cookieFunction(minCust, maxCust, avgCookie){
-  let randCust = Math.floor(Math.random() * (maxCust - minCust + 1) + minCust);
-  totalCookie = Math.floor(randCust * avgCookie);
-  return totalCookie;
+  let i = 6;
+  while(i <= 12) {
+    let randCust = Math.floor(Math.random() * (maxCust - minCust + 1) + minCust);
+    hourCookie = Math.floor(randCust * avgCookie);
+    console.log(hourCookie);
+    i++;
+  }
+  return hourCookie;
 }
-// console.log(totalCookie);
-cookieFunction(25, 63, 6.3);
 
-
-
-// function timeFunction(){
-//   for (time = 6; time <= 12; time++){
-//     console.log(`${time}am: ${totalCookie} cookies`);
-//   }
-// }
-timeFunction();
-
-console.log(totalCookie);
-
+cookieFunction(lima.minCust, lima.maxCust, lima.avgCookie);
