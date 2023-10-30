@@ -60,17 +60,23 @@ console.log(parisCookies);
 // Lima
 let limaCookies = cookieFunction(lima.minCust, lima.maxCust, lima.avgCookie);
 console.log(limaCookies);
-// function cookiePM(minCust, maxCust, avgCookie){
-//   let i = 6;
-//   while(i <= 12) {
-//     let randCust = Math.floor(Math.random() * (maxCust - minCust + 1) + minCust);
-//     hourCookie = Math.floor(randCust * avgCookie);
-//     // console.log(hourCookie);
-//     i++;
-//   }
-//   return hourCookie;
-// }
 
 
-
-// seattleFunction();
+// Finding the totals
+function getCitySum(arr){
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  return total;
+}
+let seattleTotal = getCitySum(seattleCookies);
+console.log(seattleTotal);
+let tokyoTotal = getCitySum(tokyoCookies);
+console.log(tokyoTotal);
+let dubaiTotal = getCitySum(dubaiCookies);
+console.log(dubaiTotal);
+let parisTotal = getCitySum(parisCookies);
+console.log(parisTotal);
+let limaTotal = getCitySum(limaCookies);
+console.log(limaTotal);
