@@ -12,6 +12,9 @@ h1 {
 }
 
 h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-left: 32px;
   font-family: 'righteous', sans-serif;
 }
 
