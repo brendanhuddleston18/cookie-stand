@@ -28,6 +28,20 @@ nav ul{
   gap: 32px;
 }
 
+ul {
+  color:#495057;
+  font-family: sans-serif;
+  margin-left: 64px;
+}
+
+ul li {
+  margin-bottom: 12px;
+}
+
+ul li:first-child {
+  margin-top: 12px;
+}
+
 footer {
   background-color: #cec9c9;
   text-align: center;
