@@ -38,7 +38,7 @@ ul li {
   margin-bottom: 12px;
 }
 
-ul li:first-child {
+main ul li:first-child {
   margin-top: 12px;
 }
 
