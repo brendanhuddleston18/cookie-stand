@@ -81,6 +81,7 @@ console.log(parisTotal);
 let limaTotal = getCitySum(limaCookies);
 console.log(limaTotal);
 
+//Time
 let time = 6;
 let superTimeArray = [];
 while( time < 24){
