@@ -81,12 +81,27 @@ console.log(parisTotal);
 let limaTotal = getCitySum(limaCookies);
 console.log(limaTotal);
 
+let time = 6;
+let superTimeArray = [];
+while( time < 24){
+  let superTime;
+  if(time < 12){
+    superTime = (time + "am");
+  } else if(time === 12){
+    superTime = (time + "pm");
+  }
+  else {
+    superTime = (time - 12 + "pm");
+  }
+  superTimeArray.push(superTime);
+  time++;
+}
 // Adding cookies/totals to cities
 // SEATTLE
 let seattleSection = document.getElementsByClassName("seattleList")[0];
 for(let i = 0; i < seattleCookies.length; i++){
   let seattleList = document.createElement("li");
-  seattleList.textContent = `am: ${seattleCookies[i]} cookies`;
+  seattleList.textContent = `${superTimeArray[i]}: ${seattleCookies[i]} cookies`;
   seattleSection.appendChild(seattleList);
 }
 let seattleSum = document.createElement("li");
@@ -96,7 +111,7 @@ seattleSection.appendChild(seattleSum);
 let tokyoSection = document.getElementsByClassName("tokyoList")[0];
 for(let i = 0; i < tokyoCookies.length; i++){
   let tokyoList = document.createElement("li");
-  tokyoList.textContent = `am: ${tokyoCookies[i]} cookies`;
+  tokyoList.textContent = `${superTimeArray[i]}: ${tokyoCookies[i]} cookies`;
   tokyoSection.appendChild(tokyoList);
 }
 let tokyoSum = document.createElement("li");
@@ -106,7 +121,7 @@ tokyoSection.appendChild(tokyoSum);
 let dubaiSection = document.getElementsByClassName("dubaiList")[0];
 for(let i = 0; i < dubaiCookies.length; i++){
   let dubaiList = document.createElement("li");
-  dubaiList.textContent = `am: ${dubaiCookies[i]} cookies`;
+  dubaiList.textContent = `${superTimeArray[i]}: ${dubaiCookies[i]} cookies`;
   dubaiSection.appendChild(dubaiList);
 }
 let dubaiSum = document.createElement("li");
@@ -116,7 +131,7 @@ dubaiSection.appendChild(dubaiSum);
 let parisSection = document.getElementsByClassName("parisList")[0];
 for(let i = 0; i < parisCookies.length; i++){
   let parisList = document.createElement("li");
-  parisList.textContent = `am: ${parisCookies[i]} cookies`;
+  parisList.textContent = `${superTimeArray[i]}: ${parisCookies[i]} cookies`;
   parisSection.appendChild(parisList);
 }
 let parisSum = document.createElement("li");
@@ -126,7 +141,7 @@ parisSection.appendChild(parisSum);
 let limaSection = document.getElementsByClassName("limaList")[0];
 for(let i = 0; i < limaCookies.length; i++){
   let limaList = document.createElement("li");
-  limaList.textContent = `am: ${limaCookies[i]} cookies`;
+  limaList.textContent = `${superTimeArray[i]}: ${limaCookies[i]} cookies`;
   limaSection.appendChild(limaList);
 }
 let limaSum = document.createElement("li");
