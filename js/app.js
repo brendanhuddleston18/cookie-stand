@@ -1,36 +1,18 @@
 "use strict";
 
-let seattle = {
-  minCust: 23,
-  maxCust: 65,
-  avgCookie: 6.3,
-};
+function City( minCust, maxCust, avgCookie){
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookie = avgCookie;
+  this.cityData = [minCust,maxCust,avgCookie];
+}
 
-let tokyo = {
-  minCust: 3,
-  maxCust: 24,
-  avgCookie: 1.2,
-};
+let seattle = new City(23, 65, 6.3);
+let tokyo = new City(3, 24, 1.2);
+let dubai = new City(11, 38, 3.7);
+let paris = new City(20, 38, 2.3);
+let lima = new City(2, 16, 4.6);
 
-let dubai = {
-  minCust: 11,
-  maxCust: 38,
-  avgCookie: 3.7,
-};
-
-let paris = {
-  minCust: 20,
-  maxCust: 38,
-  avgCookie: 2.3,
-};
-
-let lima = {
-  minCust: 2,
-  maxCust: 16,
-  avgCookie: 4.6,
-};
-
-// let time = 6;
 let hourCookie;
 // ChatGPT helped me with this function, it said I should generate a random number of customers first before I find the total
 function cookieFunction(minCust, maxCust, avgCookie){
