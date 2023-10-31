@@ -6,7 +6,7 @@ h1 {
   font-weight: bold;
   font-style:italic;
   color: salmon;
-  background-color: black;
+  background-color: #111;
   text-align: center;
   padding: 24px;
 }
@@ -28,12 +28,17 @@ nav ul{
   gap: 32px;
 }
 
+a {
+  color: #111;
+}
+
 img {
+  max-width: 100%;
   margin: 16px 0px;
 }
 
 header {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #111;
   position: relative;
   overfl
 }
