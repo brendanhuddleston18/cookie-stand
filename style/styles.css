@@ -28,6 +28,16 @@ nav ul{
   gap: 32px;
 }
 
+img {
+  align-items: center;
+}
+
+header {
+  border-bottom: 2px solid black;
+  position: relative;
+  overfl
+}
+
 ul {
   color:#495057;
   font-family: sans-serif;
