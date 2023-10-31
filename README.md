@@ -15,7 +15,7 @@ Brendan Huddleston
 
 ### Lighthouse Accessibility Report Score
 
-![lighthouseScore](lighthouselab06)
+![lighthouseScore](lighthouselab06.png)
 
 ### Reflections and Comments
 
