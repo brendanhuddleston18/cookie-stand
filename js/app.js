@@ -3,6 +3,7 @@
 let stores = [];
 let totals = new Array(14);
 totals.fill(0);
+
 function City(name, minCust, maxCust, avgCookie){
   this.name = name;
   this.minCust = minCust;
