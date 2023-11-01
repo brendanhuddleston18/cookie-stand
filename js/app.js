@@ -1,5 +1,8 @@
 "use strict";
 
+let stores = [];
+let totals = new Array(14);
+totals.fill(0);
 function City(name, minCust, maxCust, avgCookie){
   this.name = name;
   this.minCust = minCust;
@@ -11,6 +14,7 @@ function City(name, minCust, maxCust, avgCookie){
   this.completeCookies = [];
   // total cookies for city
   this.totalCookies = [];
+  this.totalSales = 0;
 }
 
 let seattle = new City('Seattle',23, 65, 6.3);
@@ -23,13 +27,16 @@ City.prototype.cookieTime = function(){
   for(let i = 0; i<14;i++){
     let randCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
     this.randomCust.push(randCust);
-    this.hourCookies.push(Math.floor(randCust * this.avgCookie));
+    let estimate = (Math.floor(randCust * this.avgCookie));
+    this.hourCookies.push(estimate);
+    this.totalSales += estimate;
+    totals[i] += estimate;
   }
-  let total = 0;
-  for (let i = 0; i < this.hourCookies.length; i++) {
-    total += this.hourCookies[i];
-  }
-  this.totalCookies.push(total);
+  // let total = 0;
+  // for (let i = 0; i < this.hourCookies.length; i++) {
+  //   total += this.hourCookies[i];
+  // }
+  // this.totalCookies.push(total);
 };
 
 City.prototype.render = function(){
@@ -50,17 +57,17 @@ City.prototype.render = function(){
     cityRow.appendChild(cell)
   }
   let cityTotal = document.createElement('td');
-  cityTotal.textContent = this.totalCookies;
+  cityTotal.textContent = this.totalSales;
   cityRow.appendChild(cityTotal);
 
 };
 
-City.prototype.Total = function(){
-  let totalHourlyCookies = [];
-  for(let i = 0; i < this.hourCookies.length; i++){
-    let hourTotal = (seattle.hourCookies[i] + tokyo.hourCookies[i] + dubai.hourCookies[i] + paris.hourCookies[i] + lima.hourCookies[i]);
-    totalHourlyCookies.push(hourTotal);
-  }
+let renderTotals = function(){
+  // let totalHourlyCookies = [];
+  // for(let i = 0; i < this.hourCookies.length; i++){
+  //   let hourTotal = (seattle.hourCookies[i] + tokyo.hourCookies[i] + dubai.hourCookies[i] + paris.hourCookies[i] + lima.hourCookies[i]);
+  //   totalHourlyCookies.push(hourTotal);
+  // }
 
   let tableFooter = document.getElementById('tableFoot');
   let bottomTotal = document.createElement('tr');
@@ -69,18 +76,18 @@ City.prototype.Total = function(){
   // let hourlyTotal = document.createElement('td');
   // bottomTotal.appendChild(hourlyTotal);
 
-  for(let i = 0; i < totalHourlyCookies.length; i++){
+  for(let i = 0; i < totals.length; i++){
     let footCell;
     footCell = document.createElement('td');
-    footCell.textContent = totalHourlyCookies[i];
+    footCell.textContent = totals[i];
     bottomTotal.appendChild(footCell);
   }
-  let totalDailyCookies = [];
-  let dailyTotal = (seattle.totalCookies[0] + tokyo.totalCookies[0] + dubai.totalCookies[0] + paris.totalCookies[0] + lima.totalCookies[0]);
-  totalDailyCookies.push(dailyTotal);
+  // let totalDailyCookies = [];
+  let dailyTotal = (seattle.totalSales + tokyo.totalSales + dubai.totalSales + paris.totalSales + lima.totalSales);
+  // totalDailyCookies.push(dailyTotal);
 
   let totalAll = document.createElement("td");
-  totalAll.textContent = totalDailyCookies;
+  totalAll.textContent = dailyTotal;
   bottomTotal.appendChild(totalAll);
 };
 seattle.cookieTime();
@@ -93,10 +100,10 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
-seattle.Total();
+renderTotals();
 
-console.log(seattle);
-
+// console.log(seattle);
+console.log(totals);
 // let hourCookie;
 // // ChatGPT helped me with this function, it said I should generate a random number of customers first before I find the total
 // function cookieFunction(minCust, maxCust, avgCookie){
