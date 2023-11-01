@@ -62,3 +62,40 @@ footer {
   text-align: center;
   padding: 24px;
 }
+
+table {
+  margin:40px;
+  align-self:center;
+}
+table *{
+  border: 1px solid #111;
+  padding: 12px;
+}
+
+tbody td {
+  background-color: salmon;
+}
+
+table th,
+table tfoot tr
+{
+  background-color: grey;
+}
+
+tr:last-child {
+  background: grey;
+}
+
+#tableBody td:last-of-type {
+  background-color: grey;
+  border-top: none;
+  bor
+}
+
+#tableHead th {
+  border: none;
+}
+
+#tableFoot td {
+  border: none;
+}
