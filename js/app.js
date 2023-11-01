@@ -1,5 +1,6 @@
 "use strict";
 
+// Code Review
 let stores = [];
 let totals = new Array(14);
 totals.fill(0);
