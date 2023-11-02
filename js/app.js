@@ -1,8 +1,12 @@
 "use strict";
 
+let cityForm = document.getElementById('cityForm');
+let inputs = document.querySelectorAll('input');
 let stores = [];
+let newCity = {};
 let totals = new Array(14);
 totals.fill(0);
+
 
 function City(name, minCust, maxCust, avgCookie){
   this.name = name;
@@ -10,11 +14,7 @@ function City(name, minCust, maxCust, avgCookie){
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
   this.randomCust = [];
-  // total cookies for hour
   this.hourCookies = [];
-  // this.completeCookies = [];
-  // total cookies for city
-  // this.totalCookies = [];
   this.totalSales = 0;
 }
 
@@ -23,6 +23,17 @@ let tokyo = new City('Tokyo', 3, 24, 1.2);
 let dubai = new City('Dubai', 11, 38, 3.7);
 let paris = new City('Paris', 20, 38, 2.3);
 let lima = new City('Lima', 2, 16, 4.6);
+
+stores.push(seattle, tokyo, dubai, paris, lima);
+
+for( let i = 0; i < inputs.length; i++){
+  inputs[i].addEventListener('change', function(event) {
+    console.log(event.target.name, event.target.value);
+
+    newCity[event.target.name] = event.target.value;
+  });
+}
+
 // Kyle and Zach helped me with this
 City.prototype.cookieTime = function(){
   for(let i = 0; i<14;i++){
@@ -81,6 +92,21 @@ let renderTotals = function(){
   totalAll.textContent = dailyTotal;
   bottomTotal.appendChild(totalAll);
 };
+
+cityForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  let inputCity = new City( newCity.name, Number(newCity.minCust), Number(newCity.maxCust), Number(newCity.avgCookie), [], []);
+  stores.push(inputCity);
+  inputCity.cookieTime();
+  inputCity.render();
+});
+
+
+console.log(newCity);
+console.log(stores);
+
+
+
 seattle.cookieTime();
 tokyo.cookieTime();
 dubai.cookieTime();
