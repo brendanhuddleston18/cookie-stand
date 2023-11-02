@@ -12,9 +12,9 @@ function City(name, minCust, maxCust, avgCookie){
   this.randomCust = [];
   // total cookies for hour
   this.hourCookies = [];
-  this.completeCookies = [];
+  // this.completeCookies = [];
   // total cookies for city
-  this.totalCookies = [];
+  // this.totalCookies = [];
   this.totalSales = 0;
 }
 
