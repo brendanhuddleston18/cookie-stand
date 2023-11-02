@@ -89,7 +89,6 @@ tr:last-child {
 #tableBody td:last-of-type {
   background-color: grey;
   border-top: none;
-  bor
 }
 
 #tableHead th {
@@ -101,6 +100,11 @@ tr:last-child {
 }
 
 #image {
+  display: flex;
+  justify-content: center;
+}
+
+.tableCont {
   display: flex;
   justify-content: center;
 }
