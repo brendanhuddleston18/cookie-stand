@@ -7,6 +7,7 @@ let newCity = {};
 let totals = new Array(14);
 totals.fill(0);
 
+console.log(inputs);
 
 function City(name, minCust, maxCust, avgCookie){
   this.name = name;
@@ -45,6 +46,7 @@ City.prototype.cookieTime = function(){
     totals[i] += estimate;
   }
 };
+
 
 City.prototype.render = function(){
   let body = document.getElementById("tableBody");
@@ -95,10 +97,17 @@ let renderTotals = function(){
 
 cityForm.addEventListener("submit", function(event) {
   event.preventDefault();
-  let inputCity = new City( newCity.name, Number(newCity.minCust), Number(newCity.maxCust), Number(newCity.avgCookie), [], []);
+  let inputCity = new City( newCity.name, Number(newCity.minCust), Number(newCity.maxCust), Number(newCity.avgCookie));
   stores.push(inputCity);
   inputCity.cookieTime();
   inputCity.render();
+
+  for (let i = 0; i < inputCity.hourCookies.length; i++){
+    totals[i] += inputCity.hourCookies[i];
+    console.log(inputCity.hourCookies[i]);
+  }
+  console.log(inputCity);
+  console.log(newCity);
 });
 
 
@@ -117,6 +126,7 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+
 renderTotals();
 // // Time
 // let time = 6;
