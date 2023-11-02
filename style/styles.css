@@ -85,6 +85,13 @@ tr:last-child {
   background: grey;
 }
 
+form {
+  padding-top:24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
 #tableBody td:last-of-type {
   background-color: grey;
   border-top: none;
