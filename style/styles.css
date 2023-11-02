@@ -99,3 +99,9 @@ tr:last-child {
 #tableFoot td {
   border: none;
 }
+
+#image {
+  display: flex;
+  justify-content: center;
+}
+
