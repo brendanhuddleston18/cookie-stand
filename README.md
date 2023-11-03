@@ -1,8 +1,8 @@
-# LAB - 06
+# Cookie Stand
 
 ## Cookie-Stand
 
-I build a website to help my friend pat sell salmon cookies!
+I build a website to help my friend Pat sell salmon cookies!
 
 ### Author: Student/Group Name
 
@@ -19,5 +19,4 @@ Brendan Huddleston
 
 ### Reflections and Comments
 
-* Consider including the answers to your daily journal and submission questions here
-* This is also a good place to reflect on the tools and resources used and learned
+- Pat's Salmon Cookie assignment was a pretty challenging but fun one now that we're done with it.  Making all of the data dynamic was quite the task especially with the ability to add cities into the table.
