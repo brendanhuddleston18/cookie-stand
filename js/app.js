@@ -92,7 +92,7 @@ let renderTotals = function(){
     footCell.textContent = totals[i];
     bottomTotal.appendChild(footCell);
   }
-    console.log(totalArray);
+  // console.log(totalArray);
   for (let i = 0; i < totals.length; i++){
     totalDailyCookies += totals[i];
   }
