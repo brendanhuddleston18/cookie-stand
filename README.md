@@ -17,6 +17,8 @@ Brendan Huddleston
 
 ![lighthouseScore](lighthouselab06.png)
 
+![lighthouseScore#2](lighthouselab10.png)
+
 ### Reflections and Comments
 
 - Pat's Salmon Cookie assignment was a pretty challenging but fun one now that we're done with it.  Making all of the data dynamic was quite the task especially with the ability to add cities into the table.

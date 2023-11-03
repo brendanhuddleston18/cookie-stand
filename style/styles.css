@@ -44,7 +44,7 @@ header {
 
 ul {
   color: #495057;
-  font-family: sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   margin-left: 64px;
 }
 
@@ -69,10 +69,12 @@ table {
 table *{
   border: 1px solid #111;
   padding: 12px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 tbody td {
   background-color: salmon;
+
 }
 
 table th,
